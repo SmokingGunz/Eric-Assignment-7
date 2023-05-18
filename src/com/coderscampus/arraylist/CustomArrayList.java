@@ -33,7 +33,7 @@ public class CustomArrayList<T> implements CustomList<T> {
 		if (index >= size) {
 			throw new IndexOutOfBoundsException("Hey! DUMMY! Your index, " + index
 					+ ", went out of bounds of the array size of " + size + ". Try again!");
-	}
+		}
 		return (T) items[index];
 	}
 

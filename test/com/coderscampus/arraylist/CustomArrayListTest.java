@@ -138,17 +138,17 @@ class CustomArrayListTest {
 		list.add(20);
 		assertThrows(IndexOutOfBoundsException.class, () -> list.remove(2));
 	}
-	
+
 	@Test
-    public void should_throw_exception_remove_item_not_found() {
+	public void should_throw_exception_remove_item_not_found() {
 		CustomList<Integer> list = new CustomArrayList<>();
-		
+
 		list.add(10);
 		list.add(20);
-		
+
 		assertThrows(IndexOutOfBoundsException.class, () -> list.remove(3));
 		assertThrows(IndexOutOfBoundsException.class, () -> list.remove(4));
-		
+
 	}
-	
+
 }
