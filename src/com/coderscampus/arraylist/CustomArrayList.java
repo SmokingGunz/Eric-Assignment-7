@@ -30,7 +30,7 @@ public class CustomArrayList<T> implements CustomList<T> {
 	@SuppressWarnings("unchecked")
 	@Override
 	public T get(int index) throws IndexOutOfBoundsException {
-		if (index >= size) {
+		if (index > size) {
 			throw new IndexOutOfBoundsException("Hey! DUMMY! Your index, " + index
 					+ ", went out of bounds of the array size of " + size + ". Try again!");
 		}
@@ -69,7 +69,7 @@ public class CustomArrayList<T> implements CustomList<T> {
 		for (int i = index; i < size - 1; i++) {
 			items[i] = items[i + 1];
 		}
-//		items[size - 1] = null;
+		items[size - 1] = null;
 
 		size--;
 

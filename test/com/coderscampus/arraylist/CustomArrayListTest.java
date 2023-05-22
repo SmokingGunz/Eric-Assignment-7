@@ -1,5 +1,6 @@
 package com.coderscampus.arraylist;
 
+import static org.junit.Assert.assertThrows;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
@@ -112,10 +113,11 @@ class CustomArrayListTest {
 	}
 
 	@Test
-	public void should_get_out_of_bounds_exception() {
+	public void should_get_show_null_value_end_of_list() {
 		CustomList<String> list = new CustomArrayList<>();
 		list.add("Apple");
-		assertThrows(IndexOutOfBoundsException.class, () -> list.get(1));
+		assertEquals(null, list.get(1));
+		assertThrows(IndexOutOfBoundsException.class, () -> list.get(-1));
 	}
 
 	@Test
@@ -172,6 +174,7 @@ class CustomArrayListTest {
 		assertEquals(9, list.getSize());
 		assertEquals(10, list.get(0));
 		assertEquals(100, list.get(8));
+		assertEquals(null, list.get(9));
 	}
 
 }

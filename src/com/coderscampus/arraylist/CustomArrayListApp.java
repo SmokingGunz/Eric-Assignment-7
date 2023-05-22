@@ -65,7 +65,7 @@ public class CustomArrayListApp {
         
         System.out.println(customList.getSize());
         
-        System.out.println(customList.get(8));
+        System.out.println(customList.get(9));
                
 	}
 
