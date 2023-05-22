@@ -6,12 +6,12 @@ public class CustomArrayList<T> implements CustomList<T> {
 
 	@Override
 	public boolean add(T item) {
-		if (size == items.length) {
-			items = doubleBackingArraySize();
-		}
-		items[size] = item;
-		size++;
-		return true;
+//		if (size == items.length) {
+//			items = doubleBackingArraySize();
+//		}
+//		items[size] = item;
+//		size++;
+		return add(size, item);
 	}
 
 	private Object[] doubleBackingArraySize() {
@@ -40,7 +40,7 @@ public class CustomArrayList<T> implements CustomList<T> {
 	@Override
 	public boolean add(int index, T item) throws IndexOutOfBoundsException {
 
-		if (index >= size) {
+		if (index > size) {
 			throw new IndexOutOfBoundsException("Hey! DUMMY! Your index, " + index
 					+ ", went out of bounds of the array size of " + size + ". Try again!");
 		}
@@ -69,6 +69,7 @@ public class CustomArrayList<T> implements CustomList<T> {
 		for (int i = index; i < size - 1; i++) {
 			items[i] = items[i + 1];
 		}
+//		items[size - 1] = null;
 
 		size--;
 
