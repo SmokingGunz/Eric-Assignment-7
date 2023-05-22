@@ -23,6 +23,7 @@ class CustomArrayListTest {
 
 		list.add(1, 15);
 		assertEquals(15, list.get(1));
+		assertEquals(10, list.get(0));
 		assertEquals(20, list.get(2));
 		assertEquals(4, list.getSize());
 	}
@@ -149,6 +150,28 @@ class CustomArrayListTest {
 		assertThrows(IndexOutOfBoundsException.class, () -> list.remove(3));
 		assertThrows(IndexOutOfBoundsException.class, () -> list.remove(4));
 
+	}
+	
+	@Test
+	public void should_remove_item_from_index_end_of_list() {
+		
+		CustomList<Integer> list = new CustomArrayList<>();
+		list.add(10);
+		list.add(20);
+		list.add(30);
+		list.add(40);
+		list.add(50);
+		list.add(60);
+		list.add(70);
+		list.add(80);
+		list.add(90);
+		list.add(100);
+		
+		int removedElement = list.remove(8);
+		assertEquals(90, removedElement);
+		assertEquals(9, list.getSize());
+		assertEquals(10, list.get(0));
+		assertEquals(100, list.get(8));
 	}
 
 }
